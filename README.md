@@ -1,1 +1,1 @@
-# library-catalog-vanillajs
+# library-catalog
