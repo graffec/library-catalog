@@ -1,1 +1,134 @@
 
+:root {
+
+    /* --- Color Palette Reference : https://pin.it/2loFOMy --- */
+    --midnight:#081f5c;
+    --royal:#334eac;
+    --china:#7096d1;
+    --sky:#bad6eb;
+    --dawn:#d0e3ff;
+    --porcelain: #edf1f6;
+    --asianpear: #f2f0de;
+    --moon: #f7f2eb;
+    --jicama:#fff9f0;
+}
+
+body {
+    background-color: var(--moon);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    /* background-color: var(--porcelain); */
+    padding: 20px;
+}
+
+.header-title {
+    color: var(--midnight);
+    text-align: center;
+    /* text-decoration: underline; */
+}
+
+.form-container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+   
+}
+
+.book-entry {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--midnight);
+    box-shadow: 0 0 10px var(--china);
+}
+
+.book-entry label{
+  color: var(--china);
+  padding-left: 20px ;
+}
+
+.book-entry input{
+    background-color: var(--dawn);
+    color:var(--royal);
+    font-size: 18px;
+    width: 200px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.book-entry button {
+    margin-left: 20px;
+    font-size: 15px;
+    background-color: var(--china);
+    border-radius: 20px;
+    border: none;
+    color: var(--midnight)
+}
+.book-entry button:hover {
+    background-color: var(--dawn);
+    border-radius: 20px;
+    border: none;
+    color: var(--royal)
+}
+
+.button-container {
+    text-align: center;
+}
+
+/* -- Button Design Inspiration : https://codepen.io/Rawnly/pen/dggGgJ -- */
+
+.button-container button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    background: transparent;
+    border: 2px solid var(--china);
+    color: var(--china);
+    box-shadow: none;
+}
+
+.button-container button:hover {
+    cursor: pointer;
+    transform: scale(1.05);    
+}
+
+.book-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin: 20px auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+
+th {
+    background-color: var(--china);
+    color: var(--midnight);
+    border: 0.5px solid var(--porcelain);
+}
+
+tbody {
+    background-color: var(--sky);
+    color:var(--midnight)
+}
+
+tbody button {
+    background-color: var(--china);
+    color:var(--jicama);
+    border-radius: 50%;
+    font-size: 15px;
+    border: none;
+
+}
+
+tbody button:hover {
+    background-color: var(--midnight);
+    color:var(--china);
+ 
+
+}
