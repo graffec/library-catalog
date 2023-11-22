@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     displayBooks();
 });
 
+var currentSortField = '';  
+var sortDirection = 1;  
+
 function addBook() {
     var title = document.getElementById('title').value;
     var author = document.getElementById('author').value;
@@ -39,11 +42,25 @@ function saveBook(book) {
     localStorage.setItem('library', JSON.stringify(books));
 }
 
-function displayBooks() {
+function displayBooks(sortField = currentSortField) {
     var bookTable = document.getElementById('book-table').getElementsByTagName('tbody')[0];
     bookTable.innerHTML = '';
 
     var books = JSON.parse(localStorage.getItem('library')) || [];
+
+    books.sort(function (a, b) {
+        var fieldA = (a[sortField] || '').toLowerCase();
+        var fieldB = (b[sortField] || '').toLowerCase();
+
+        if (fieldA < fieldB) {
+            return -1 * sortDirection;
+        }
+        if (fieldA > fieldB) {
+            return 1 * sortDirection;
+        }
+        return 0;
+    });
+
     books.forEach(function (book, count) {
         var row = bookTable.insertRow();
         var countCell = row.insertCell(0);
@@ -66,6 +83,8 @@ function displayBooks() {
 
         actionCell.appendChild(removeButton);
     });
+
+    currentSortField = sortField;
 }
 
 function removeBook(count) {
@@ -118,3 +137,30 @@ function addDateToFileName(filename) {
 
     return newFilename;
 }
+
+
+
+function handleSort(field) {
+    if (currentSortField === field) {
+
+        sortDirection *= -1;
+    } else {
+
+        sortDirection = 1;
+    }
+
+    displayBooks(field);
+}
+
+
+document.getElementById('t-header').addEventListener('click', function () {
+    handleSort('title');
+});
+
+document.getElementById('a-header').addEventListener('click', function () {
+    handleSort('author');
+});
+
+document.getElementById('g-header').addEventListener('click', function () {
+    handleSort('genre');
+});
