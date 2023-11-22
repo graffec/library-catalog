@@ -18,15 +18,16 @@ body {
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-header {
-    /* background-color: var(--porcelain); */
+.header {
+    background-color: var(--sky);
     padding: 20px;
+    border-radius: 50px;
 }
 
 .header-title {
     color: var(--midnight);
     text-align: center;
-    /* text-decoration: underline; */
+    text-shadow: #d0e3ff 7px 0px;
 }
 
 .form-container {
@@ -41,7 +42,7 @@ header {
     padding: 20px;
     border-radius: 8px;
     background-color: var(--midnight);
-    box-shadow: 0 0 10px var(--china);
+    box-shadow: 0 0 10px var(--sky);
 }
 
 .book-entry label{
@@ -60,7 +61,7 @@ header {
 
 .book-entry button {
     margin-left: 20px;
-    font-size: 15px;
+    font-size: 18px;
     background-color: var(--china);
     border-radius: 20px;
     border: none;
@@ -74,14 +75,14 @@ header {
 }
 
 .button-container {
-    text-align: center;
+   text-align: center;
 }
 
-/* -- Button Design Inspiration : https://codepen.io/Rawnly/pen/dggGgJ -- */
+/* -- Buttons : https://codepen.io/Rawnly/pen/dggGgJ -- */
 
 .button-container button {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 16px;
+    font-size: 20px;
     background: transparent;
     border: 2px solid var(--china);
     color: var(--china);
@@ -103,6 +104,7 @@ header {
 th, td {
     padding: 10px;
     text-align: center;
+    border: 0.5px solid var(--jicama);
 }
 
 
@@ -114,8 +116,10 @@ th {
 
 tbody {
     background-color: var(--sky);
-    color:var(--midnight)
+    color:var(--midnight);
+    
 }
+
 
 tbody button {
     background-color: var(--china);
