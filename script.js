@@ -111,7 +111,7 @@ function downloadCSV() {
     csvContent += '#,Title,Author,Genre\n';
 
     books.forEach(function (book, count) {
-        csvContent += `${count + 1},${book.title},${book.author},${book.genre}\n`;
+        csvContent += `${count + 1},"${book.title}","${book.author}","${book.genre}"\n`;
     });
 
     var encodedUri = encodeURI(csvContent);
