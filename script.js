@@ -193,7 +193,7 @@ function downloadTextFile() {
     var encodedUri = encodeURI('data:text/plain;charset=utf-8,' + textContent);
     var link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    var filename = addDateToFileName('library_text')
+    var filename = addDateToFileName('library_catalog')
     link.setAttribute('download', filename + '.txt');
     document.body.appendChild(link);
     link.click();
