@@ -47,16 +47,25 @@ body {
 
 .book-entry label{
   color: var(--china);
-  padding-left: 20px ;
+  padding-left: 18px ;
 }
 
 .book-entry input{
     background-color: var(--dawn);
     color:var(--royal);
-    font-size: 18px;
+    font-size: 16px;
     width: 200px;
     font-family: 'Times New Roman', Times, serif;
     
+}
+
+select {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: var(--dawn);
+    font-size: 16px;
+    color:var(--royal);
+    border:none;
+
 }
 
 .book-entry button {

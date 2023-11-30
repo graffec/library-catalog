@@ -164,3 +164,41 @@ document.getElementById('a-header').addEventListener('click', function () {
 document.getElementById('g-header').addEventListener('click', function () {
     handleSort('genre');
 });
+
+document.getElementById('reset-table').addEventListener('click', function () {
+    resetTable();
+});
+
+function resetTable() {
+    localStorage.removeItem('library');
+    
+    var bookTable = document.getElementById('book-table').getElementsByTagName('tbody')[0];
+    bookTable.innerHTML = '';
+}
+
+function downloadTextFile() {
+    var books = JSON.parse(localStorage.getItem('library')) || [];
+
+    if (books.length === 0) {
+        alert('No books yet :(');
+        return;
+    }
+
+    var textContent = '';
+    
+    books.forEach(function (book, count) {
+        textContent += `${count + 1}) ${book.title} by ${book.author} {${book.genre}}\n`;
+    });
+
+    var encodedUri = encodeURI('data:text/plain;charset=utf-8,' + textContent);
+    var link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    var filename = addDateToFileName('library_text')
+    link.setAttribute('download', filename + '.txt');
+    document.body.appendChild(link);
+    link.click();
+}
+
+document.getElementById('download-text-btn').addEventListener('click', function () {
+    downloadTextFile();
+});

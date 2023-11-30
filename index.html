@@ -22,12 +22,42 @@
             <label for="author">Author : </label>
             <input type="text" id="author">
             <label for="genre">Genre : </label>
-            <input type="text" id="genre">
+            <select id="genre">
+                <option value="Biography/Autobiography">Biography/Autobiography</option>
+                <option value="Classic">Classic</option>
+                <option value="Dystopia">Dystopia</option>
+                <option value="Essay">Essay</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Graphic Novel">Graphic Novels</option>
+                <option value="Historical Fiction">Historical Fiction</option>
+                <option value="History">History</option>
+                <option value="Horror">Horror</option>
+                <option value="Memoir">Memoir</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Nonfiction">Nonfiction</option>
+                <option value="Philosophy">Philosophy</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Romance">Romance</option>
+                <option value="Short Story">Short Story</option>
+                <option value="Science Fiction">Science Fiction</option>
+                <option value="Science">Science</option>
+                <option value="Self-Help">Self-Help</option>
+                <option value="Travel">Travel</option>
+                <option value="True Crime">True Crime</option>
+            </select>
             <button type="button" onclick="addBook()">+</button>
         </form>
     </div>
     <div class="button-container" id="button-container">
+        <button type="button" onclick="downloadTextFile()">Download Text</button>
+        &nbsp;&nbsp;&nbsp;
+
+        <button id="reset-table">Reset</button>
+        &nbsp;&nbsp;&nbsp;
+
         <button type="button" onclick="downloadCSV()">Download CSV</button>
+      
     </div>
     <br>
     <table class="book-table" id="book-table">
